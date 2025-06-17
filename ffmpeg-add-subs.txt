@@ -1,0 +1,7 @@
+ffmpeg -i infile.mp4 -i infile.srt -c copy -c:s mov_text outfile.mp4
+
+
+ffmpeg -i VIDEO.mp4 -i SUBS.srt -map 0:v -map 0:a -c copy -map 1 -c:s:0 mov_text -metadata:s:s:0 language=eng output.mp4
+
+
+ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 output.mp4
